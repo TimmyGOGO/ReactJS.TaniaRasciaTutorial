@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 
 //вспомогательные переменные:
 const TableHeader = () => {
     return (
-        <tr>
-            <th>Name</th>
-            <th>Job</th>
-            <th>Remove</th>
-        </tr>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <th>Job</th>
+                <th>Remove</th>
+            </tr>
+        </tbody>
+        
     );
 };
 
@@ -18,7 +20,7 @@ const TableBody = props => {
             <tr key={index}>
                 <td>{row.name}</td>
                 <td>{row.job}</td>
-                <td><button className="btn-primary" onClick={() => props.removeCharacter(index)}>Delete</button></td>
+                <td><button onClick={() => props.removeCharacter(index)}>Delete</button></td>
             </tr>
         );
     });

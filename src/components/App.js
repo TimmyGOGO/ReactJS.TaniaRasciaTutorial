@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Table from './Table';
-import 'bootstrap/dist/css/bootstrap.css';
+import Form from './Form';
 
 class App extends Component {
   state = {
@@ -30,6 +30,7 @@ class App extends Component {
         <Table characterData = {this.state.characters}
                 removeCharacter = {this.removeCharacter}
         />
+        <Form handleSubmit = {this.handleSubmit} />
       </div>
     );
   }
@@ -41,6 +42,12 @@ class App extends Component {
         characters: characters.filter((character, i) => { 
             return i !== index;
         })
+    });
+  }
+
+  handleSubmit = character => {
+    this.setState({
+      characters: [...this.state.characters, character]
     });
   }
 
