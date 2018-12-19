@@ -1,32 +1,6 @@
 import React, { Component } from 'react';
-
-//вспомогательные переменные:
-const TableHeader = () => {
-    return (
-        <tbody>
-            <tr>
-                <th>Name</th>
-                <th>Job</th>
-                <th>Remove</th>
-            </tr>
-        </tbody>
-        
-    );
-};
-
-const TableBody = props => { 
-    const rows = props.characterData.map((row, index) => {
-        return (
-            <tr key={index}>
-                <td>{row.name}</td>
-                <td>{row.job}</td>
-                <td><button onClick={() => props.removeCharacter(index)}>Delete</button></td>
-            </tr>
-        );
-    });
-
-    return <tbody>{rows}</tbody>;
-};
+import TableBody from './TableBody';
+import TableHeader from './TableHeader';
 
 //основной компонент:
 class Table extends Component {
